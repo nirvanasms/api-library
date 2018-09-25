@@ -55,8 +55,7 @@ public class XmlHelper {
 				Element sendDateTime = doc.createElement("sendDateTime");
 				String dateFormat = "yyyy.M.dd.HH.m.s";
 				SimpleDateFormat simpleDateFormat = new SimpleDateFormat(dateFormat);
-				sendDateTime
-						.setTextContent(String.valueOf(simpleDateFormat.parse(message.getSendDateTime().toString())));
+				sendDateTime.setTextContent(DateFormatter.format(message.getSendDateTime()));
 				sms.appendChild(sendDateTime);
 			}
 
@@ -100,8 +99,6 @@ public class XmlHelper {
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
 		} catch (DOMException e) {
-			e.printStackTrace();
-		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		return null;

@@ -1,10 +1,9 @@
 package org.nirvanasms.api;
 
-import java.awt.SecondaryLoop;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-
-import javax.security.auth.login.CredentialNotFoundException;
 
 import org.nirvanasms.api.core.entity.ApiUser;
 import org.nirvanasms.api.core.entity.Credit;
@@ -14,6 +13,7 @@ import org.nirvanasms.api.core.entity.OneToManyMessage;
 import org.nirvanasms.api.core.entity.PhoneAndMessagePair;
 import org.nirvanasms.api.core.entity.PhoneNumber;
 import org.nirvanasms.api.core.exceptions.NonValidPhoneNumberException;
+import org.nirvanasms.api.core.utility.DateFormatter;
 import org.nirvanasms.api.core.utility.ProcessResult;
 import org.nirvanasms.api.operations.BlackListOperations;
 import org.nirvanasms.api.operations.CreditOperations;
@@ -27,28 +27,30 @@ import org.nirvanasms.api.operations.ReportOperations;
  */
 public class App {
 
-	static ApiUser apiUser = new ApiUser("test", "test");
+	static ApiUser apiUser = new ApiUser("nirvanasms", "4b37aae82b5b0b8b57446c616cd524b2");
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		sendOneToManyMessage();
 		//sendManyToManyMessage();
 		//addToBlackList();
 		//queryCreditAmount();
 		//queryHeaders();
 		//getReport();
-	}
+			}
 
 	static void sendOneToManyMessage() {
 		MessageSender sender = new MessageSender();
-
+		String[] a = new String[] {"",""};
 		List<PhoneNumber> numbers = new ArrayList<PhoneNumber>();
-		numbers.add(new PhoneNumber("5555555555"));
+		numbers.add(new PhoneNumber("5076982056"));
 
-		OneToManyMessage message = new OneToManyMessage();
-		message.setHeader("NirvanaSMS");
-		message.setValidityTime(2880);
-		message.setGsmNumbers(numbers);
-		message.setMessage("İletişim talebiniz alınmıştır. En kısa zamanda size döneceğiz2.");
+		OneToManyMessage message = new OneToManyMessage().builder()
+		.header("NirvanaSMS")
+		.validity(2880)
+		.gsmNumbers(numbers)
+		.message("İletişim talebiniz alınmıştır. En kısa zamanda size döneceğiz2.")
+		.sendDateTime("25/09/2018 14:53:00","dd/MM/yyyy HH:mm:ss")
+		.build();
 
 		ProcessResult<String> result = sender.sendMessage(apiUser, message);
 
@@ -95,16 +97,17 @@ public class App {
 		HeaderOperations headerOperations = new HeaderOperations();
 		ProcessResult<String[]> result = headerOperations.query(apiUser);
 		printResult(result);
-		for(String header : result.getData())
+		for (String header : result.getData())
 			System.out.println(header);
 	}
-	
-	static void getReport(){
+
+	static void getReport() {
 		ReportOperations reportOperations = new ReportOperations();
 		ProcessResult<List<NumberReport>> result = reportOperations.getReport(apiUser, "message id");
 		printResult(result);
-		for(NumberReport report : result.getData()){
-			System.out.println(report.getNumber().getNumber() + " " + report.getStatusCode().getCode() + " " + report.getStatusCode().getDescription());
+		for (NumberReport report : result.getData()) {
+			System.out.println(report.getNumber().getNumber() + " " + report.getStatusCode().getCode() + " "
+					+ report.getStatusCode().getDescription());
 		}
 	}
 

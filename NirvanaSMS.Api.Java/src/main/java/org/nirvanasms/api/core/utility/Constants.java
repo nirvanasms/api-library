@@ -4,6 +4,8 @@ public class Constants {
 	static String ApiDomain = "http://panel.1sms.com.tr";
 	static String ApiPort = "8080";
 	static String ApiDirectory = "api";
+	
+	public static String providerXmlDateFormat = "yyyy.M.dd.HH.m.s";
 
 	public static String BlackListAddUrl = String.format("%s:%s/%s/blacklistadd/V1", ApiDomain, ApiPort, ApiDirectory);
 	public static String HeaderQueryUrl = String.format("%s:%s/%s/originator/v1", ApiDomain, ApiPort, ApiDirectory);

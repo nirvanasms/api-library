@@ -17,7 +17,7 @@ Java kullanıcıları şu anlık Java projesini indirip projelerine dahil edebil
 
 **Diğer Diller**
 
-Diğer dilleri kullanan geliştiriciler api adreslerimize gerekli xml formatlarını kullanarak klasik HTTP isteği göndermelidir. Ayrıntılı bilgi için [api dökümanımızı inceleyebilirsiniz.] (docs/nirvana-sms-api-dokumani.pdf) 
+Diğer dilleri kullanan geliştiriciler api adreslerimize gerekli xml formatlarını kullanarak klasik HTTP isteği göndermelidir. Ayrıntılı bilgi için [api dökümanımızı inceleyebilirsiniz.](docs/nirvana-sms-api-dokumani.pdf) 
 
 ## Kütüphane'nin Kullanımı
 

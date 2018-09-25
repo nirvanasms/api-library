@@ -2,13 +2,22 @@
 Bu kütüphane ile Nirvana SMS'in API özelliklerini çok daha kolay bir şekilde kullanabileceksiniz.
 
 ## Kütüphane'nin Kurulumu
+
+**C# Kullanıcıları**
+
 Visual Studio kullanıcıları Package Manager Console'a aşağıdaki komutu yazarak kütüphaneyi kurabilirler:
 ```
 Install-Package NirvanaSms.Api
 ```
 ya da çalıştıkları projeye Solution Explorer üzerindeyken sağ tıklayıp **Manage Nuget Packages** sekmesine tıkladıklarında karşılarına çıkan pencere **NirvanaSms.Api** kelimesini arattırarak kurabilirler.
 
+**Java Kullanıcıları**
+
 Java kullanıcıları şu anlık Java projesini indirip projelerine dahil edebilirler. Kütüphaneyi kolay bir şekilde eklemek için yakın zamanda Maven Central desteği de gelecektir.
+
+**Diğer Diller**
+
+Diğer dilleri kullanan geliştiriciler api adreslerimize gerekli xml formatlarını kullanarak klasik HTTP isteği göndermelidir. Ayrıntılı bilgi için [api dökümanımızı inceleyebilirsiniz.] (docs/nirvana-sms-api-dokumani.pdf) 
 
 ## Kütüphane'nin Kullanımı
 

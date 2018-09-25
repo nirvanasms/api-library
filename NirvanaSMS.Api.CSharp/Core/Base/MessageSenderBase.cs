@@ -1,9 +1,4 @@
 ﻿using NirvanaSMS.Api.Core.Interface;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NirvanaSMS.Api.Core.Entity;
 using NirvanaSMS.Api.Core.Utility;
 

@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 using static NirvanaSMS.Api.Core.Utility.Enums;
 
 namespace NirvanaSMS.Api.Core.Utility
@@ -75,7 +72,7 @@ namespace NirvanaSMS.Api.Core.Utility
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(new Uri(Url));
             request.Method = "POST";
-            request.Timeout = 7000;
+            request.Timeout = 30000;
             request.ContentType = "text/xml; charset=UTF-8";
 
             byte[] xmlData = Encoding.UTF8.GetBytes(XmlItem);

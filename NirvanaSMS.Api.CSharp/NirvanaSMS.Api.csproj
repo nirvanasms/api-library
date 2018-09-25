@@ -74,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Base\MessageBuilder.cs" />
-    <Compile Include="Core\Base\MessageSenderBuilder.cs" />
     <Compile Include="Core\Interface\IBuilder.cs" />
     <Compile Include="Core\Utility\ManyToManyMessageBuilder.cs" />
     <Compile Include="Core\Utility\OneToManyMessageBuilder.cs" />

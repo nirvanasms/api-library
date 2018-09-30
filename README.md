@@ -25,10 +25,11 @@ C# ve Java dışındaki dilleri kullanan geliştiriciler HTTP isteği gönderme 
 
 Çalışmalarınızı yaparken test için oluşturduğumuz hesabı kullanabilirsiniz. Tüm dönüş değerleri görülebilir fakat test amaçlı hesap olduğu için sms cep numarasına gerçekte ulaşmaz.
 
-#### Test hesabı
+#### Test hesabını kullanma:
 
-**Kullanıcı Adı:** test
-**Parola:** test
+```
+ApiUser apiUser = new ApiUser("test", "test");
+```
 
  ### 2) Mesaj Gönderme
 İki tip mesaj gönderme şekli vardır:

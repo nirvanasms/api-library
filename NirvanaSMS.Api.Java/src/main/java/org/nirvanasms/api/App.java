@@ -27,7 +27,7 @@ import org.nirvanasms.api.operations.ReportOperations;
  */
 public class App {
 
-	static ApiUser apiUser = new ApiUser("nirvanasms", "4b37aae82b5b0b8b57446c616cd524b2");
+	static ApiUser apiUser = new ApiUser("test", "test");
 
 	public static void main(String[] args) throws ParseException {
 		sendOneToManyMessage();
@@ -42,10 +42,10 @@ public class App {
 		MessageSender sender = new MessageSender();
 		String[] a = new String[] {"",""};
 		List<PhoneNumber> numbers = new ArrayList<PhoneNumber>();
-		numbers.add(new PhoneNumber("5076982056"));
+		numbers.add(new PhoneNumber("5555555555"));
 
 		OneToManyMessage message = new OneToManyMessage().builder()
-		.header("NirvanaSMS")
+		.header("başlık")
 		.validity(2880)
 		.gsmNumbers(numbers)
 		.message("İletişim talebiniz alınmıştır. En kısa zamanda size döneceğiz2.")
@@ -65,7 +65,7 @@ public class App {
 		phonesAndMessages.add(new PhoneAndMessagePair("0555 555 5555", "TEST 3"));
 
 		ManyToManyMessage message = new ManyToManyMessage();
-		message.setHeader("NirvanaSMS");
+		message.setHeader("başlık");
 		message.setPhonesAndMessages(phonesAndMessages);
 		message.setValidityTime(2880);
 

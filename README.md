@@ -21,7 +21,16 @@ C# ve Java dışındaki dilleri kullanan geliştiriciler HTTP isteği gönderme 
 
 ## Kütüphane'nin Kullanımı
 
- ### 1) Mesaj Gönderme
+### 1) Test Hesabı Bilgileri
+
+Çalışmalarınızı yaparken test için oluşturduğumuz hesabı kullanabilirsiniz. Tüm dönüş değerleri görülebilir fakat test amaçlı hesap olduğu için sms cep numarasına gerçekte ulaşmaz.
+
+#### Test hesabı
+
+**Kullanıcı Adı:** test
+**Parola:** test
+
+ ### 2) Mesaj Gönderme
 İki tip mesaj gönderme şekli vardır:
 #### a) 1-N Mesaj Gönderme
 
@@ -108,7 +117,7 @@ ProcessResult<string> result = sender.SendMessage(apiUser, message);
  ProcessResult<String> result = sender.sendMessage(apiUser, message);
   ```
     
- ### 2) Kara Listeye Ekleme
+ ### 3) Kara Listeye Ekleme
  
    ##### C# Kodu:
    
@@ -133,7 +142,7 @@ ProcessResult result = blackListOperations.Add(apiUser, number);
 	}
    ```
    
- ### 3) Başlıkları Sorgulama
+ ### 4) Başlıkları Sorgulama
  
   ##### C# Kodu:
   
@@ -151,7 +160,7 @@ ProcessResult<string[]> result = headerOps.Query(apiUser);
   ProcessResult<String[]> result = headerOperations.query(apiUser);
    ```
    
- ### 4) Kredi Miktarını Sorgulama
+ ### 5) Kredi Miktarını Sorgulama
  
    ##### C# Kodu:
    
@@ -168,7 +177,7 @@ ProcessResult<Credit> result = creditOps.Query(apiUser);
   CreditOperations creditOperations = new CreditOperations();
   ProcessResult<Credit> result = creditOperations.query(apiUser);
    ```
-### 5) İletim Raporu Sorgulama
+### 6) İletim Raporu Sorgulama
 Raporunu sorgulamak istediğiniz mesajın id'sini kullanmanız gerekir. Bu id'ye sms panelimizden ya da sms gönderme api'sinin döndürdüğü değerden ulaşabilirsiniz.
 
 ##### C# Kodu:

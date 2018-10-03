@@ -21,11 +21,13 @@ C# ve Java dışındaki dilleri kullanan geliştiriciler HTTP isteği gönderme 
 
 ## Kütüphane'nin Kullanımı
 
-### 1) Test Hesabı Bilgileri
+### 1) Api Şifresi Oluşturma
 
-Çalışmalarınızı yaparken test için oluşturduğumuz hesabı kullanabilirsiniz. Tüm dönüş değerleri görülebilir fakat test amaçlı hesap olduğu için sms cep numarasına gerçekte ulaşmaz.
+Api özelliklerini kullanabilmek için benzersiz bir şifre kullanmanız gerekir.Bu şifreyi müşteri panelinizin sol kısmındaki menüde bulunan **Kullanıcı İşlemleri** sekmesinin altındaki **Api Ayarları** sayfasından oluşturabilirsiniz.
 
 #### Test hesabını kullanma:
+
+Çalışmalarınızı yaparken test için oluşturduğumuz hesabı kullanabilirsiniz. Tüm dönüş değerleri görülebilir fakat test amaçlı hesap olduğu için sms cep numarasına gerçekte ulaşmaz.
 
 ```
 ApiUser apiUser = new ApiUser("test", "test");
@@ -40,7 +42,7 @@ ApiUser apiUser = new ApiUser("test", "test");
    ##### C# Kodu:
    
    ```
-ApiUser apiUser = new ApiUser("test", "test");
+ApiUser apiUser = new ApiUser("username", "api_key");
 MessageSender sender = new MessageSender();
 
 string[] _numbers = new string[] { "905555555555","0555 555 5555","555 555 5555" };
@@ -58,7 +60,7 @@ ProcessResult<string> result = sender.SendMessage(apiUser, message);
    ##### Java Kodu:
    
    ```
-   ApiUser apiUser = new ApiUser("test", "test");
+ApiUser apiUser = new ApiUser("username", "api_key");
 MessageSender sender = new MessageSender();
 
 String[] _numbers = new String[] { "905555555555","0555 555 5555","555 555 5555" };
@@ -80,7 +82,7 @@ ProcessResult<String> result = sender.sendMessage(apiUser, message);
   
   ##### C# Kodu:
   ```
-ApiUser apiUser = new ApiUser("test", "test");
+ApiUser apiUser = new ApiUser("username", "api_key");
 MessageSender sender = new MessageSender();
 
 List<PhoneAndMessagePair> phonesAndMessages = new List<PhoneAndMessagePair>()
@@ -102,7 +104,7 @@ ProcessResult<string> result = sender.SendMessage(apiUser, message);
   ##### Java Kodu:
   
   ```
-  ApiUser apiUser = new ApiUser("test","test");
+  ApiUser apiUser = new ApiUser("username", "api_key");
   MessageSender sender = new MessageSender();
 		List<PhoneAndMessagePair> phonesAndMessages = new ArrayList<PhoneAndMessagePair>();
 		phonesAndMessages.add(new PhoneAndMessagePair("0555 555 5555", "TEST 1"));
@@ -123,7 +125,7 @@ ProcessResult<string> result = sender.SendMessage(apiUser, message);
    ##### C# Kodu:
    
    ```
-ApiUser apiUser = new ApiUser("test", "test");
+ApiUser apiUser = new ApiUser("username", "api_key");
 BlackListOperations blackListOperations = new BlackListOperations();
 
 PhoneNumber number = new PhoneNumber("555 555 5555");
@@ -133,7 +135,7 @@ ProcessResult result = blackListOperations.Add(apiUser, number);
    ##### Java Kodu:
    
    ```
-  ApiUser apiUser = new ApiUser("test", "test");
+  ApiUser apiUser = new ApiUser("username", "api_key");
   BlackListOperations blackListOperations = new BlackListOperations();
   ProcessResult<?> result = null;
   try {
@@ -148,7 +150,7 @@ ProcessResult result = blackListOperations.Add(apiUser, number);
   ##### C# Kodu:
   
    ```
-ApiUser apiUser = new ApiUser("test", "test");
+ApiUser apiUser = new ApiUser("username", "api_key");
 HeaderOperations headerOps = new HeaderOperations();
 ProcessResult<string[]> result = headerOps.Query(apiUser);
    ```
@@ -156,7 +158,7 @@ ProcessResult<string[]> result = headerOps.Query(apiUser);
    ##### Java Kodu:
    
    ```
-  ApiUser apiUser = new ApiUser("test", "test");
+  ApiUser apiUser = new ApiUser("username", "api_key");
   HeaderOperations headerOperations = new HeaderOperations();
   ProcessResult<String[]> result = headerOperations.query(apiUser);
    ```
@@ -166,7 +168,7 @@ ProcessResult<string[]> result = headerOps.Query(apiUser);
    ##### C# Kodu:
    
    ```
-ApiUser apiUser = new ApiUser("test", "test");
+ApiUser apiUser = new ApiUser("username", "api_key");
 CreditOperations creditOps = new CreditOperations();
 ProcessResult<Credit> result = creditOps.Query(apiUser);
    ```
@@ -174,7 +176,7 @@ ProcessResult<Credit> result = creditOps.Query(apiUser);
    ##### Java Kodu:
    
    ```
-  ApiUser apiUser = new ApiUser("test", "test");
+  ApiUser apiUser = new ApiUser("username", "api_key");
   CreditOperations creditOperations = new CreditOperations();
   ProcessResult<Credit> result = creditOperations.query(apiUser);
    ```
@@ -184,7 +186,7 @@ Raporunu sorgulamak istediğiniz mesajın id'sini kullanmanız gerekir. Bu id'ye
 ##### C# Kodu:
 
    ```
-ApiUser apiUser = new ApiUser("test", "test");
+ApiUser apiUser = new ApiUser("username", "api_key");
 ReportOperations reportOps = new ReportOperations();
 string messageId = "";
 ProcessResult<List<NumberReport>> result = reportOps.GetReport(apiUser, messageId);
@@ -192,7 +194,7 @@ ProcessResult<List<NumberReport>> result = reportOps.GetReport(apiUser, messageI
 ##### Java Kodu:
 
    ```
-  ApiUser apiUser = new ApiUser("test", "test");
+  ApiUser apiUser = new ApiUser("username", "api_key");
   ReportOperations reportOperations = new ReportOperations();
   ProcessResult<List<NumberReport>> result = reportOperations.getReport(apiUser, "message id");
    ```

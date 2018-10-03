@@ -23,7 +23,7 @@ C# ve Java dışındaki dilleri kullanan geliştiriciler HTTP isteği gönderme 
 
 ### 1) Api Şifresi Oluşturma
 
-Api özelliklerini kullanabilmek için benzersiz bir şifre kullanmanız gerekir.Bu şifreyi müşteri panelinizin sol kısmındaki menüde bulunan **Kullanıcı İşlemleri** sekmesinin altındaki **Api Ayarları** sayfasından oluşturabilirsiniz.
+Api özelliklerini kullanabilmek için benzersiz bir şifre kullanmanız gerekir. Bu şifreyi müşteri panelinizin sol kısmındaki menüde bulunan **Kullanıcı İşlemleri** sekmesinin altındaki **Api Ayarları** sayfasından oluşturabilirsiniz.
 
 #### Test hesabını kullanma:
 

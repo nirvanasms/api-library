@@ -17,7 +17,7 @@ Java kullanıcıları şu anlık Java projesini indirip projelerine dahil edebil
 
 **Diğer Diller**
 
-C# ve Java dışındaki dilleri kullanan geliştiriciler HTTP isteği gönderme yöntemiyle api özelliklerimizi kullanabilirler. Bununla ilgili ayrıntılı dökümana ulaşmak için tıklayınız.
+C# ve Java dışındaki dilleri kullanan geliştiriciler HTTP isteği gönderme yöntemiyle api özelliklerimizi kullanabilirler. Bununla ilgili ayrıntılı dökümana ulaşmak için [tıklayınız](docs/nirvana-sms-api-dokumani.pdf).
 
 ## Kütüphane'nin Kullanımı
 

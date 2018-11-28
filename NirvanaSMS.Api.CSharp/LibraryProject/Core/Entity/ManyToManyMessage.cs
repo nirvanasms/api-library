@@ -11,7 +11,7 @@ namespace NirvanaSMS.Api.Core.Entity
 
         public ManyToManyMessage()
         {
-
+            Builder = new ManyToManyMessageBuilder();
         }
 
         public ManyToManyMessage(ManyToManyMessageBuilder builder)
